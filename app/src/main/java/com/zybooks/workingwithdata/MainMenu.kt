@@ -29,5 +29,10 @@ class MainMenu : AppCompatActivity() {
             var intent = Intent(this, NasaAPI::class.java)
             startActivity(intent)
         }
+        var neoButton = findViewById<Button>(R.id.neoButton)
+        neoButton.setOnClickListener {
+            var intent = Intent(this, NeoAPI::class.java)
+            startActivity(intent)
+        }
     }
 }

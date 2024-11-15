@@ -21,9 +21,8 @@ import com.android.volley.toolbox.JsonArrayRequest
 import com.android.volley.toolbox.Volley
 import org.json.JSONArray
 
-const val TAG = "NASA_API"
 
-class NasaAPI : AppCompatActivity() {
+class NeoAPI : AppCompatActivity() {
     lateinit var startDateTextView: TextView
     lateinit var startDateEditText: EditText
     lateinit var endDateTextView: TextView
@@ -99,7 +98,9 @@ class NasaAPI : AppCompatActivity() {
             ImageData("https://apod.nasa.gov/apod/image/1908/ElephantTrunk_Ayoub1024.jpg", "Like an illustration in a galactic Just So Story, the Elephant's Trunk Nebula winds through the emission nebula and young star cluster complex IC 1396, in the high and far off constellation of Cepheus. Also known as vdB 142, the cosmic elephant's trunk is over 20 light-years long. This colorful close-up view was recorded through narrow band filters that transmit the light from ionized hydrogen, sulfur, and oxygen atoms in the region.  The resulting composite highlights the bright swept-back ridges that outline pockets of cool interstellar dust and gas. Such embedded, dark, tendril-shaped clouds contain the raw material for star formation and hide protostars within. Nearly 3,000 light-years distant, the relatively faint IC 1396 complex covers a large region on the sky, spanning over 5 degrees. The dramatic scene spans a 1 degree wide field, about the size of 2 Full Moons."),
             ImageData("https://apod.nasa.gov/apod/image/1908/PerseidsPloughCow1024.jpg", ""),
             ImageData("https://apod.nasa.gov/apod/image/2210/GrbRings_SwiftMiller_960.jpg",""))
-        //imageCustomAdapter = ImageCustomAdapter(imageDataSet)
+        imageCustomAdapter = ImageCustomAdapter(imageDataSet)
+
+
 
         recyclerView = findViewById(R.id.recyclerView)
         recyclerView.layoutManager = GridLayoutManager(this, 2)
@@ -112,7 +113,7 @@ class NasaAPI : AppCompatActivity() {
         // Building URL for request.
         // logic here also ensures request is built correctly
         // and to get the correct response format.
-        var base_url = "https://api.nasa.gov/planetary/apod"
+        var base_url = "https://api.nasa.gov/neo/rest/v1/feed"
         var url = base_url +
                 "?thumbs=true&api_key=${BuildConfig.NASA_API_KEY}"
         // If there is count, try to convert, if worked, add count.
