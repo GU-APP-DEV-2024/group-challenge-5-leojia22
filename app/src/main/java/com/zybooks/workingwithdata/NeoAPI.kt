@@ -113,7 +113,7 @@ class NeoAPI : AppCompatActivity() {
         // Building URL for request.
         // logic here also ensures request is built correctly
         // and to get the correct response format.
-        var base_url = "https://api.nasa.gov/neo/rest/v1/feed"
+        var base_url = "https://api.nasa.gov/neo/rest/v1/feed?"
         var url = base_url +
                 "?thumbs=true&api_key=${BuildConfig.NASA_API_KEY}"
         // If there is count, try to convert, if worked, add count.
